@@ -15,7 +15,55 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <form>
+                <input
+                  type="search"
+                  name="city-search"
+                  id="city-search"
+                  placeholder="Enter a city"
+                />
+                <input type="submit" value="Search" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-1">
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+            alt="Sunny"
+          />
+        </div>
+        <div class="col-1">39</div>
+        <div class="col-1">ºF | º C</div>
+        <div class="col-6">
+          <ul>
+            <li>Precipitation: 1%</li>
+            <li>Humidity: 56%</li>
+            <li>Wind: 2 mph</li>
+          </ul>
+        </div>
+        <div class="col-3">
+          <ul>
+            <li>Asheville, NC</li>
+            <li>Sunday 7:00pm</li>
+            <li>Clear</li>
+          </ul>
+        </div>
+      </div>
+      <footer>
+        <a href="http://github.com/atalley3" target="_blank"
+          >Open Source Code</a
+        >
+        by Ashley Talley
+      </footer>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>
