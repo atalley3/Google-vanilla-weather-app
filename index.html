@@ -12,48 +12,61 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="row">
+    <div
+      class="container weatherApp border border-2 rounded-2 border-secondary"
+    >
+      <div class="row gy-5">
         <div class="col">
           <div class="card">
-            <div class="card-body">
-              <form>
-                <input
-                  type="search"
-                  name="city-search"
-                  id="city-search"
-                  placeholder="Enter a city"
-                />
-                <input type="submit" value="Search" />
+            <div class="card-body text-center">
+              <form class="row">
+                <div class="col-9">
+                  <input
+                    type="search"
+                    name="city-search"
+                    id="city-search"
+                    placeholder="Enter a city"
+                    class="form-control"
+                  />
+                </div>
+                <div class="col-3">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row py-3">
         <div class="col-1">
           <img
             src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
             alt="Sunny"
           />
         </div>
-        <div class="col-1">39</div>
-        <div class="col-1">ºF | º C</div>
-        <div class="col-6">
-          <ul>
+        <div class="col-2 currentTemp">39</div>
+        <div class="col-1 tempType">ºF | ºC</div>
+        <div class="col-3">
+          <ul class="weatherDetails">
             <li>Precipitation: 1%</li>
             <li>Humidity: 56%</li>
             <li>Wind: 2 mph</li>
           </ul>
         </div>
-        <div class="col-3">
+        <div class="col-5 text-end">
           <ul>
-            <li>Asheville, NC</li>
-            <li>Sunday 7:00pm</li>
-            <li>Clear</li>
+            <li class="cityName">Asheville, NC</li>
+            <li class="dayDetails">Sunday 7:00pm</li>
+            <li class="dayDetails">Clear</li>
           </ul>
         </div>
       </div>
