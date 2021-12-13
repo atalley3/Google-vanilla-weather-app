@@ -62,3 +62,7 @@ footer {
   color: #70757a;
   text-decoration: none;
 }
+.units .active {
+  color: #202124;
+  cursor: default;
+}

@@ -31,12 +31,16 @@ function formateDate(timestamp) {
 }
 
 function displayTempature(response) {
-  let currentTemp = Math.round(response.data.main.temp);
+  fTemp = response.data.main.temp;
+  imperialWind = Math.round(response.data.wind.speed);
+
+  let currentTemp = Math.round(fTemp);
   let description = response.data.weather[0].description;
   let humidity = Math.round(response.data.main.humidity);
-  let windSpeed = Math.round(response.data.wind.speed);
+  let windSpeed = imperialWind;
   let icon = response.data.weather[0].icon;
   let iconAlt = response.data.weather[0].main;
+
   let tempElement = document.querySelector("#current-temp");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -44,11 +48,12 @@ function displayTempature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
+
   tempElement.innerHTML = currentTemp;
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = description;
   humidityElement.innerHTML = humidity;
-  windElement.innerHTML = windSpeed;
+  windElement.innerHTML = `${windSpeed} MPH`;
   dateElement.innerHTML = formateDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",
@@ -68,7 +73,37 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Asheville");
+function convertToMetric(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#current-temp");
+  let cTemp = (fTemp - 32) * (5 / 9);
+  tempElement.innerHTML = Math.round(cTemp);
+  let windElement = document.querySelector("#wind");
+  let metricWind = Math.round(imperialWind * 1.61);
+  windElement.innerHTML = `${metricWind} Km/H`;
+  metricUnits.classList.add("active");
+  imperialUnits.classList.remove("active");
+}
+function convertToImperial(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#current-temp");
+  tempElement.innerHTML = Math.round(fTemp);
+  let windElement = document.querySelector("#wind");
+  windElement.innerHTML = `${imperialWind} MPH`;
+  metricUnits.classList.remove("active");
+  imperialUnits.classList.add("active");
+}
+
+let fTemp = null;
+let imperialWind = null;
+
+let metricUnits = document.querySelector("#metric");
+metricUnits.addEventListener("click", convertToMetric);
+
+let imperialUnits = document.querySelector("#imperial");
+imperialUnits.addEventListener("click", convertToImperial);
 
 let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
+
+search("Asheville");
