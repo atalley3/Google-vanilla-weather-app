@@ -1,0 +1,63 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+footer {
+  font-size: 12px;
+  line-height: 24px;
+  text-align: center;
+}
+.currentWeather {
+  height: 93px;
+}
+
+.weatherApp {
+  max-width: 652px;
+  margin: 15px auto;
+  padding: 10px;
+}
+.weatherImg {
+  display: block;
+  margin: 0px auto;
+  position: relative;
+  top: -6px;
+}
+
+.weatherDetails {
+  color: #70757a;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 16px;
+}
+.cityName {
+  color: #202124;
+  font-size: 22px;
+  line-height: 26px;
+}
+.dayDetails {
+  color: #70757a;
+  font-size: 16px;
+  line-height: 20px;
+}
+.units {
+  color: #202124;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 24px;
+}
+.currentTemp {
+  color: #202124;
+  display: inline-block;
+  font-size: 48px;
+  vertical-align: top;
+  line-height: 60px;
+  position: relative;
+  top: -6px;
+}
+.units a {
+  color: #70757a;
+  text-decoration: none;
+}

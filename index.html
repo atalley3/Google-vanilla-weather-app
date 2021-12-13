@@ -21,53 +21,58 @@
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div
-      class="container weatherApp border border-2 rounded-2 border-secondary"
-    >
-      <div class="row gy-5">
-        <div class="col">
-          <div class="card">
-            <div class="card-body text-center">
-              <form class="row">
-                <div class="col-9">
-                  <input
-                    type="search"
-                    name="city-search"
-                    id="city-search"
-                    placeholder="Enter a city"
-                    class="form-control"
-                  />
-                </div>
-                <div class="col-3">
-                  <button type="submit" class="btn btn-primary">Search</button>
-                </div>
-              </form>
+    <div class="container">
+      <div class="weatherApp border border-2 rounded-2 border-secondary">
+        <div class="row gy-5">
+          <div class="col">
+            <div class="card">
+              <div class="card-body text-center">
+                <form class="row">
+                  <div class="col-9">
+                    <input
+                      type="search"
+                      name="city-search"
+                      id="city-search"
+                      placeholder="Enter a city"
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="col-3">
+                    <button type="submit" class="btn btn-primary">
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="row py-3">
-        <div class="col-1">
-          <img
-            src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-            alt="Sunny"
-          />
-        </div>
-        <div class="col-2 currentTemp">39</div>
-        <div class="col-1 tempType">ºF | ºC</div>
-        <div class="col-3">
-          <ul class="weatherDetails">
-            <li>Precipitation: 1%</li>
-            <li>Humidity: 56%</li>
-            <li>Wind: 2 mph</li>
-          </ul>
-        </div>
-        <div class="col-5 text-end">
-          <ul>
-            <li class="cityName">Asheville, NC</li>
-            <li class="dayDetails">Sunday 7:00pm</li>
-            <li class="dayDetails">Clear</li>
-          </ul>
+        <div class="row py-3 currentWeather">
+          <div class="col-2">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+              alt="Sunny"
+              class="weatherImg"
+            />
+          </div>
+          <div class="col-2 text-center px-0">
+            <span class="currentTemp">39</span>
+            <span class="units">ºF | <a href="#">ºC</a></span>
+          </div>
+          <div class="col-3">
+            <ul class="weatherDetails">
+              <li>Precipitation: 1%</li>
+              <li>Humidity: 56%</li>
+              <li>Wind: 2 mph</li>
+            </ul>
+          </div>
+          <div class="col-5 text-end">
+            <ul>
+              <li class="cityName">Asheville, NC</li>
+              <li class="dayDetails">Sunday 7:00pm</li>
+              <li class="dayDetails">Clear</li>
+            </ul>
+          </div>
         </div>
       </div>
       <footer>
