@@ -18,7 +18,7 @@ footer {
   max-width: 652px;
   margin: 15px auto;
   padding: 10px;
-  background-color: #eeeeee;
+  background: #fff;
 }
 .weatherImg {
   display: block;
