@@ -93,6 +93,35 @@ function convertToImperial(event) {
   metricUnits.classList.remove("active");
   imperialUnits.classList.add("active");
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 futureDayForecast">
+            <ul>
+              <li>${day}</li>
+              <li>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="placeholder"
+                  class="futureWeatherIcon"
+                />
+              </li>
+              <li>
+                <span class="futureHigh">60º</span
+                ><span class="futureLow"> 29º</span>
+              </li>
+            </ul>
+          </div>`;
+    forecastElement.innerHTML = `${forecastHTML} </div>`;
+  });
+}
 
 let fTemp = null;
 let imperialWind = null;
@@ -107,3 +136,4 @@ let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 search("Asheville");
+displayForecast();
