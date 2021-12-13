@@ -18,6 +18,7 @@ footer {
   max-width: 652px;
   margin: 15px auto;
   padding: 10px;
+  background-color: #eeeeee;
 }
 .weatherImg {
   display: block;
@@ -42,6 +43,9 @@ footer {
   font-size: 16px;
   line-height: 20px;
   text-transform: capitalize;
+}
+.dayDetails small {
+  font-size: 12px;
 }
 .units {
   color: #202124;
