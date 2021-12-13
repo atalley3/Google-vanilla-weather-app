@@ -52,7 +52,8 @@ function displayTempature(response) {
 }
 
 let apiKey = "bcdada43905d3c2d7aa9f45a7ce30f8b";
+let city = "Asheville";
 let units = "imperial";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Asheville&appid=${apiKey}&units=${units}`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(displayTempature);
