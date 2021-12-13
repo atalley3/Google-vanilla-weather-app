@@ -29,6 +29,45 @@ function formateDate(timestamp) {
   }
   return `${days[day]} ${hours}:${minutes} ${amOrPm}`;
 }
+function displayForecast(response) {
+  console.log(response);
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+
+  let forecastHTML = `<div class="row">`;
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 futureDayForecast">
+            <ul>
+              <li>${day}</li>
+              <li>
+                <img
+                  src="http://openweathermap.org/img/wn/10d@2x.png"
+                  alt="placeholder"
+                  class="futureWeatherIcon"
+                />
+              </li>
+              <li>
+                <span class="futureHigh">60º</span
+                ><span class="futureLow"> 29º</span>
+              </li>
+            </ul>
+          </div>`;
+    forecastElement.innerHTML = `${forecastHTML} </div>`;
+  });
+}
+
+function sendCoords(response) {
+  let lon = response.lon;
+  let lat = response.lat;
+  let apiKey = "bcdada43905d3c2d7aa9f45a7ce30f8b";
+  let units = "imperial";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 function displayTempature(response) {
   fTemp = response.data.main.temp;
@@ -60,6 +99,8 @@ function displayTempature(response) {
     `https://openweathermap.org/img/wn/${icon}@2x.png`
   );
   iconElement.setAttribute("alt", iconAlt);
+
+  sendCoords(response.data.coord);
 }
 function search(city) {
   let apiKey = "bcdada43905d3c2d7aa9f45a7ce30f8b";
@@ -93,35 +134,6 @@ function convertToImperial(event) {
   metricUnits.classList.remove("active");
   imperialUnits.classList.add("active");
 }
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
-
-  let forecastHTML = `<div class="row">`;
-
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2 futureDayForecast">
-            <ul>
-              <li>${day}</li>
-              <li>
-                <img
-                  src="http://openweathermap.org/img/wn/10d@2x.png"
-                  alt="placeholder"
-                  class="futureWeatherIcon"
-                />
-              </li>
-              <li>
-                <span class="futureHigh">60º</span
-                ><span class="futureLow"> 29º</span>
-              </li>
-            </ul>
-          </div>`;
-    forecastElement.innerHTML = `${forecastHTML} </div>`;
-  });
-}
 
 let fTemp = null;
 let imperialWind = null;
@@ -136,4 +148,3 @@ let form = document.querySelector("form");
 form.addEventListener("submit", handleSubmit);
 
 search("Asheville");
-displayForecast();
