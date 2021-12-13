@@ -70,3 +70,27 @@ footer {
   color: #202124;
   cursor: default;
 }
+.futureForecast {
+  margin: 0 auto;
+  margin-top: 20px;
+  color: #202124;
+  text-align: center;
+  display: block;
+}
+.futureDayForecast {
+  font-size: 16px;
+  opacity: 0.7;
+}
+.futureHigh {
+  font-size: 13px;
+  opacity: 1;
+}
+.futureLow {
+  font-size: 13px;
+  opacity: 0.7;
+}
+.futureWeatherIcon {
+  max-width: 75%;
+  margin: 0 auto;
+  display: block;
+}
