@@ -31,8 +31,6 @@ function formateDate(timestamp) {
 }
 
 function displayTempature(response) {
-  console.log(response.data);
-
   let currentTemp = Math.round(response.data.main.temp);
   let description = response.data.weather[0].description;
   let humidity = Math.round(response.data.main.humidity);
@@ -58,10 +56,19 @@ function displayTempature(response) {
   );
   iconElement.setAttribute("alt", iconAlt);
 }
+function search(city) {
+  let apiKey = "bcdada43905d3c2d7aa9f45a7ce30f8b";
+  let units = "imperial";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayTempature);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
 
-let apiKey = "bcdada43905d3c2d7aa9f45a7ce30f8b";
-let city = "Asheville";
-let units = "imperial";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+search("Asheville");
 
-axios.get(apiUrl).then(displayTempature);
+let form = document.querySelector("form");
+form.addEventListener("submit", handleSubmit);
