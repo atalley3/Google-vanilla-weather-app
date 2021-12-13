@@ -50,11 +50,7 @@
         </div>
         <div class="row py-3 currentWeather">
           <div class="col-2">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="Sunny"
-              class="weatherImg"
-            />
+            <img src="#" alt="Text" class="weatherImg" id="icon" />
           </div>
           <div class="col-2 text-center px-0">
             <span class="currentTemp" id="current-temp"></span>
@@ -69,7 +65,9 @@
           <div class="col-5 text-end">
             <ul>
               <li class="cityName" id="city"></li>
-              <li class="dayDetails" id="date"></li>
+              <li class="dayDetails">
+                <small>Last Updated:</small> <span id="date"></span>
+              </li>
               <li class="dayDetails" id="description"></li>
             </ul>
           </div>
