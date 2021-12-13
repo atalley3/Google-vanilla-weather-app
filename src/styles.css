@@ -62,14 +62,7 @@ footer {
   position: relative;
   top: -6px;
 }
-.units a {
-  color: #70757a;
-  text-decoration: none;
-}
-.units .active {
-  color: #202124;
-  cursor: default;
-}
+
 .futureForecast {
   margin: 0 auto;
   margin-top: 20px;
