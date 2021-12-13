@@ -19,6 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -56,21 +57,20 @@
             />
           </div>
           <div class="col-2 text-center px-0">
-            <span class="currentTemp">39</span>
+            <span class="currentTemp" id="current-temp"></span>
             <span class="units">ºF | <a href="#">ºC</a></span>
           </div>
           <div class="col-3">
             <ul class="weatherDetails">
-              <li>Precipitation: 1%</li>
-              <li>Humidity: 56%</li>
-              <li>Wind: 2 mph</li>
+              <li>Humidity: <span id="humidity"></span>%</li>
+              <li>Wind: <span id="wind"></span> MPH</li>
             </ul>
           </div>
           <div class="col-5 text-end">
             <ul>
-              <li class="cityName">Asheville, NC</li>
+              <li class="cityName" id="city"></li>
               <li class="dayDetails">Sunday 7:00pm</li>
-              <li class="dayDetails">Clear</li>
+              <li class="dayDetails" id="description"></li>
             </ul>
           </div>
         </div>

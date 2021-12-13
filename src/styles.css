@@ -41,6 +41,7 @@ footer {
   color: #70757a;
   font-size: 16px;
   line-height: 20px;
+  text-transform: capitalize;
 }
 .units {
   color: #202124;
